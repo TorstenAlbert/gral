@@ -12,7 +12,7 @@ def compute_fitness(bb: Blackboard) -> float:
     fitness = (pass_rate * 100) + (1 / (gap + 0.01)) + math.log(coverage + 1)
 
     # Stagnation detection
-    history = bb.get("fitness_history")
+    history = bb.get("fitness_history") or []
     stagnant = bb.get("feedback", "stagnant_count")
     if history and fitness <= history[-1]:
         stagnant += 1
