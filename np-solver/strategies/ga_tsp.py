@@ -28,7 +28,6 @@ def run_ga(bb: Blackboard):
         creator.create("Individual", list, fitness=creator.FitnessMin)
 
     toolbox = base.Toolbox()
-    toolbox.register("indices", np.random.permutation, n)
     toolbox.register(
         "individual",
         tools.initIterate,
