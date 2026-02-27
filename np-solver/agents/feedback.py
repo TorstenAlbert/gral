@@ -27,7 +27,7 @@ def compute_fitness(bb: Blackboard) -> float:
     params = bb.get("strategies", "params")
 
     if pass_rate < 0.5:
-        params["pop_size"] = int(params["pop_size"] * 1.2)
+        params["pop_size"] = min(int(params["pop_size"] * 1.2), 10000)
 
     if gap > 0.1:
         params["gens"] = params["gens"] + 50

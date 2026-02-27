@@ -6,6 +6,7 @@ from agents.blackboard import Blackboard
 
 PML_PATH = Path(__file__).parent.parent / "models" / "current.pml"
 ARTIFACTS = ["pan.c", "pan.h", "pan.b", "pan.m", "pan.t", "pan", "_spin_nvr.tmp"]
+TRAIL_GLOB = "pan*.trail"
 
 
 def _cleanup():
@@ -13,6 +14,8 @@ def _cleanup():
         p = Path(name)
         if p.exists():
             p.unlink()
+    for trail in Path(".").glob(TRAIL_GLOB):
+        trail.unlink()
 
 
 def run_spin_smc(pml_path: Path, num_sims: int = 1) -> dict:
