@@ -1,6 +1,5 @@
 import json
 from pathlib import Path
-from copy import deepcopy
 
 BB_PATH = Path(__file__).parent.parent / "blackboard.json"
 
