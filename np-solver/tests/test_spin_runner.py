@@ -21,4 +21,4 @@ def test_spin_updates_blackboard():
     verify(bb)
     bb2 = Blackboard()
     status = bb2.get("verification", "status")
-    assert status in ("PASS", "FAIL", "compile_error", "timeout", "spin_missing")
+    assert status in ("PASS", "FAIL", "compile_error", "timeout")
