@@ -30,10 +30,13 @@ def compute_fitness(bb: Blackboard) -> float:
         params["pop_size"] = min(int(params["pop_size"] * 1.2), 10000)
 
     if gap > 0.1:
-        params["gens"] = params["gens"] + 50
+        params["gens"] = min(params["gens"] + 100, 2000)
 
-    if stagnant > 5:
+    if stagnant > 3:
         params["mutpb"] = min(params["mutpb"] + 0.05, 0.3)
+
+    params["pop_size"] = min(params["pop_size"], 1000)
+    params["gens"] = min(params["gens"], 2000)
 
     # ready_for_test only when both conditions hold
     ready = gap < 0.05 and pass_rate >= 0.95

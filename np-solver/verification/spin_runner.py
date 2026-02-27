@@ -43,8 +43,8 @@ def run_spin_smc(pml_path: Path, num_sims: int = 1) -> dict:
 
         # Run verification
         r = subprocess.run(
-            ["./pan", "-m50000"],
-            capture_output=True, text=True, timeout=60
+            ["./pan", "-m100000"],
+            capture_output=True, text=True, timeout=120
         )
         output = r.stdout + r.stderr
 
