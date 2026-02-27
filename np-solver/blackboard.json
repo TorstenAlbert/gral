@@ -1,0 +1,35 @@
+{
+  "problem": {
+    "type": "TSP",
+    "instance": [[0,0],[3,1],[1,4],[5,2],[2,5],[4,3]],
+    "optimal": 14.8,
+    "n": 6
+  },
+  "strategies": {
+    "current": "ga_tsp",
+    "tried": [],
+    "params": {
+      "pop_size": 100,
+      "gens": 200,
+      "mutpb": 0.1,
+      "cxpb": 0.7
+    }
+  },
+  "best_solution": null,
+  "best_cost": null,
+  "verification": {
+    "pass_rate": 0,
+    "status": "pending",
+    "error": null
+  },
+  "fitness_history": [],
+  "feedback": {
+    "gap": 1.0,
+    "pass_rate": 0,
+    "stagnant_count": 0,
+    "ready_for_test": false
+  },
+  "iteration": 0,
+  "test_passed": false,
+  "promise": null
+}
