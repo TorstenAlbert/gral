@@ -11,7 +11,7 @@ def gen_promela(bb: Blackboard):
     lines = []
     lines.append(f"/* TSP Hamiltonian Cycle Verification — {n} cities */")
     lines.append(f"byte tour[{n}];")
-    lines.append("byte visited[6];")  # will be 0-initialized by Promela
+    lines.append(f"byte visited[{n}];")  # will be 0-initialized by Promela
     lines.append("")
     lines.append("proctype VerifyTour() {")
     lines.append(f"    byte i = 0;")
@@ -22,10 +22,10 @@ def gen_promela(bb: Blackboard):
     lines.append(f"        :: visited[tour[i]] == 1 -> valid = 0")
     lines.append(f"        :: else -> visited[tour[i]] = 1")
     lines.append(f"        fi;")
-    lines.append(f"        i++")
+    lines.append(f"        i++;")
     lines.append(f"    :: i >= {n} -> break")
     lines.append(f"    od;")
-    lines.append(f"    assert(valid == 1)")
+    lines.append(f"    assert(valid == 1);")
     lines.append("}")
     lines.append("")
     lines.append("init {")
